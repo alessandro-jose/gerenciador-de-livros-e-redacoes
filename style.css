@@ -1,0 +1,191 @@
+:root {
+    --cor1: blue;
+    --cor2: aqua;
+    --cor3: rgba(13, 202, 202, 0.445);
+    --cor4: rgba(0, 255, 255, 0.062);
+
+    --font1: arial, helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--cor3);
+    font-family: var(--font1);
+    margin: 0px;
+    padding: 0px;
+}
+
+#head {
+    background-image: linear-gradient(to bottom, var(--cor2), var(--cor1));
+    text-align: center;
+    padding: 10px;
+    margin: 0px;
+}
+
+#nav {
+    display: block;
+    margin: 0px;
+    padding: 10px;
+    background-color: var(--cor1);
+}
+
+button {
+    display: block;
+    text-align: center;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bolder;
+    background-color: var(--cor3);
+    border: none;
+}
+
+#nav button {
+    display: inline;
+    margin: 0px 10px;
+    background-color: var(--cor1);
+    border: none;
+}
+
+div {
+    background-color: var(--cor3);
+    display: block;
+    padding: 10px;
+    width: 500px;
+    border-radius: 5px;
+    margin: 10px auto;
+    
+}
+
+div h1 {
+    font-size: 1em;
+}
+
+.h1 {
+    text-align: center;
+}
+
+#s2 {
+    display: none;
+}
+
+#inp {
+    display: block;
+    margin-bottom: 10px;
+    margin: auto;
+    width: 300px;
+    height: 20px;
+}
+
+#s3 {
+    display: none;
+}
+
+.in1 {
+    display: block;
+    margin: 20px auto;
+    border: 1px solid black;
+    width: 90%; 
+    
+    /* CORREÇÃO: Força o CSS a aceitar a altura que o JavaScript mandar */
+    height: auto; 
+    max-height: none !important; /* Remove qualquer trava de altura máxima */
+
+    box-sizing: border-box;
+    resize: none; 
+    overflow-y: hidden; 
+    white-space: pre-wrap !important; 
+    word-break: break-word !important; 
+}
+
+.in2 {
+    display: block;
+    margin: 20px auto; 
+    width: 90%; 
+    
+    /* CORREÇÃO: Deixa a altura livre e usa apenas o min-height como partida */
+    height: auto; 
+    min-height: 40px; 
+    max-height: none !important; /* Garante que a caixa possa crescer infinitamente */
+    
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    resize: none; 
+    overflow-y: hidden; 
+    white-space: pre-wrap !important; 
+    word-break: break-word !important; 
+}
+
+#menu{
+    display: none;
+    height: 30px;
+}
+
+
+@media screen and (max-width: 555px){
+    div {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 445px){
+    nav {
+            display: block;
+            position: absolute;
+            padding-top: 10px;
+            left: -255px;
+            background-color: rgb(17, 0, 255);
+            border-radius: 0px 0px 10px 0px;
+            transition-duration: 2s;
+            height: 150px;
+            width: 170px;
+            text-align: center;
+    }
+
+    #menu {
+        display: block;
+        margin-right: 300px;
+    }
+
+    div {
+        width: 300px;
+        font-size: 0.8em;
+    }
+
+    #inp {
+        width: 200px;
+    }
+
+    header {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    div {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 248px){
+    body h1 {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 224px) {
+    div {
+        width: 150px;
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width: 183px) {
+    div {
+        width: 100px;
+        font-size: 0.6em;
+    }
+}
