@@ -16,9 +16,7 @@ if (document.getElementById('bt1')) {
 
 
     // === CARREGAR TODOS OS ELEMENTOS SALVOS ===
-
-    // Loop 1: REDAÇÕES (Puxa in12 e in22 -> Mostra na caixa de Redações s1dv2)
-    for (let c = 1; c > 0; c++) {
+        for (let c = 1; c > 0; c++) {
         let redacaoSalva = localStorage.getItem('in12' + c)
         let descricaor = localStorage.getItem('in22' + c)
         
@@ -61,6 +59,9 @@ if (document.getElementById('bt1')) {
             window.location.href = "ver.html" 
         })
     }
+    
+    // Loop 1: REDAÇÕES (Puxa in12 e in22 -> Mostra na caixa de Redações s1dv2)
+    
     
     // Loop 2: LIVROS (Puxa in11 e in21 -> Mostra na caixa de Livros s1dv1)
     for (let c = 1; c > 0; c++) {
@@ -106,6 +107,7 @@ if (document.getElementById('bt1')) {
             window.location.href = "ver.html"
         })
     }
+
 
     bt1.style.backgroundColor = 'var(--cor2)'
 
@@ -169,6 +171,7 @@ if (document.getElementById('bt1')) {
     let bd = document.getElementById('bd')
     let s1 = document.getElementById('s1')
     let s2 = document.getElementById('s2')
+    let voltar = document.getElementById('voltar')
 
     s1.style.display = 'none'
     s2.style.display = 'none'
@@ -197,6 +200,10 @@ if (document.getElementById('bt1')) {
             txtRedacao.style.height = 'auto';
             txtRedacao.style.height = txtRedacao.scrollHeight + 'px';
         }
+    })
+
+    voltar.addEventListener('click', () => {
+        window.location.href = 'index.html'
     })
 
     let bus1 = document.getElementById('bus1')
