@@ -80,6 +80,14 @@ div h1 {
     display: none;
 }
 
+#h1especial {
+    text-align: center;
+}
+
+#pespecial {
+    margin: 10px;
+}
+
 .in1 {
     display: block;
     margin: 20px auto;
