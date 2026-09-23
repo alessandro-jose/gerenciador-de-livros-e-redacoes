@@ -58,6 +58,8 @@ if (document.getElementById('bt1')) {
         novobotaovr.addEventListener('click', () => {
             localStorage.setItem('titulo_temporario', redacaoSalva)
             localStorage.setItem('descricao_temporaria', descricaor)
+
+            localStorage.setItem('identificacao', 'r')
             window.location.href = "ver.html" 
         })
     }
@@ -108,6 +110,7 @@ if (document.getElementById('bt1')) {
         novobotaovl.addEventListener('click', () => {
             localStorage.setItem('titulo_temporario', libroSalva)
             localStorage.setItem('descricao_temporaria', descricaol)
+            localStorage.setItem('identificacao', 'l')
             window.location.href = "ver.html"
         })
     }
@@ -217,6 +220,24 @@ if (document.getElementById('bt1')) {
     let in12 = document.getElementById('in12')
     let in22 = document.getElementById('in22')
 
+    if (localStorage.getItem('identificacao') == 'l'){
+        in11.value = localStorage.getItem('editarh1')
+        in21.value = localStorage.getItem('editarp')
+
+        s1pe.style.display = 'none'
+        s1.style.display = 'block'
+        s2.style.display = 'none'
+
+    }else if (localStorage.getItem('identificacao') == 'r'){
+        in12.value = localStorage.getItem('editarh1')
+        in22.value = localStorage.getItem('editarp')
+
+        s1pe.style.display = 'none'
+        s1.style.display = 'none'
+        s2.style.display = 'block'
+    }
+
+
     bus1.addEventListener('click', () => {
         if (in11.value != 0 || in21.value != 0) {
             for (let c = 1; c > 0; c++) {
@@ -255,6 +276,7 @@ if (document.getElementById('bt1')) {
         }
     })
 
+    
     // CORREÇÃO: Captura TODAS as caixas com querySelectorAll e ativa o EventListener correto com "L" maiúsculo
     const caixasTexto = document.querySelectorAll('.in2');
     caixasTexto.forEach(caixa => {
@@ -278,12 +300,15 @@ if (document.getElementById('bt1')) {
 
     let h1 = document.createElement('h1')
     let p = document.createElement('p')
+    let editar = document.createElement('button')
 
     bodyver.appendChild(h1)
-    bodyver.appendChild(p) // CORREÇÃO: Corrigido o erro de digitação da linha 245 anterior
+    bodyver.appendChild(p)
+    bodyver.appendChild(editar) // CORREÇÃO: Corrigido o erro de digitação da linha 245 anterior
 
     h1.textContent = localStorage.getItem('titulo_temporario')
     p.textContent = localStorage.getItem('descricao_temporaria')
+    editar.textContent = 'Editar'
 
     let button = document.createElement('button')
     button.textContent = 'Sair'
@@ -293,6 +318,13 @@ if (document.getElementById('bt1')) {
         localStorage.removeItem('titulo_temporario')
         localStorage.removeItem('descricao_temporaria')
         window.location.href = 'index.html'
+    })
+
+    editar.addEventListener('click', () => {
+        localStorage.setItem('editarh1', localStorage.getItem('titulo_temporario'))
+        localStorage.setItem('editarp', localStorage.getItem('descricao_temporaria'))
+
+        window.location.href = 'paginaedicao.html'
     })
     
     h1.setAttribute('id', 'h1especial')
