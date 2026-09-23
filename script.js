@@ -47,6 +47,8 @@ if (document.getElementById('bt1')) {
         novadivr.appendChild(novobotaor)
         novadivr.appendChild(novobotaovr)
 
+        novadivr.setAttribute('class', 'novadiv')
+
         novobotaor.addEventListener('click', () => {
             localStorage.removeItem('in12' + c)
             localStorage.removeItem('in22' + c)
@@ -94,6 +96,8 @@ if (document.getElementById('bt1')) {
         novadivl.appendChild(novopl)
         novadivl.appendChild(novobotaol)
         novadivl.appendChild(novobotaovl)
+
+        novadivl.setAttribute('class', 'novadiv')
 
         novobotaol.addEventListener('click', () => {
             localStorage.removeItem('in11' + c)
